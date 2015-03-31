@@ -14,3 +14,6 @@ TODO
 	-	anagram frequency between pages
 	-	edit distance between anagrams
 	-	
+7. parse URLs
+	-	allow either topic or url input
+8. 
