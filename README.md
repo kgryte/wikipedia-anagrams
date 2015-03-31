@@ -2,7 +2,7 @@ Wikipedia Anagrams
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
-> Finds anagrams in Wikipedia pages.
+> Finds anagrams in [Wikipedia](http://www.wikipedia.org/) pages.
 
 
 ## Installation
@@ -22,7 +22,7 @@ var wanagrams = require( 'wikipedia-anagrams' );
 
 #### wanagrams( x )
 
-Finds anagrams in Wikipedia pages.
+Finds anagrams in [Wikipedia](http://www.wikipedia.org/) pages.
 
 ``` javascript
 
