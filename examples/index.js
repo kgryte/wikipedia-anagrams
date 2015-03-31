@@ -6,4 +6,4 @@ function onAnagrams( arr ) {
 	console.log( arr );
 }
 
-wanagrams( 'Linear regression', onAnagrams );
+wanagrams( ['salsa', 'tiger', 'ballet', 'russia'], onAnagrams );
