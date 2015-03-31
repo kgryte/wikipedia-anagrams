@@ -31,7 +31,11 @@
   "bugs": {
     "url": "https://github.com/kgryte/wikipedia-anagrams/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "validate.io-array": "^1.0.3",
+    "validate.io-string": "^1.0.2",
+    "wtf_wikipedia": "^0.1.4"
+  },
   "devDependencies": {
     "chai": "2.x.x",
     "mocha": "2.x.x",
