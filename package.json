@@ -32,7 +32,10 @@
     "url": "https://github.com/kgryte/wikipedia-anagrams/issues"
   },
   "dependencies": {
+    "compute-anagram-hash": "0.0.1",
     "validate.io-array": "^1.0.3",
+    "validate.io-function": "^1.0.2",
+    "validate.io-object": "^1.0.3",
     "validate.io-string": "^1.0.2",
     "wtf_wikipedia": "^0.1.4"
   },

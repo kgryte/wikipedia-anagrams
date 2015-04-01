@@ -17,10 +17,10 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 ## Usage
 
 ``` javascript
-var wanagrams = require( 'wikipedia-anagrams' );
+var getAnagrams = require( 'wikipedia-anagrams' );
 ```
 
-#### wanagrams( x )
+#### getAnagrams( x )
 
 Finds anagrams in [Wikipedia](http://www.wikipedia.org/) pages.
 
@@ -33,7 +33,7 @@ Finds anagrams in [Wikipedia](http://www.wikipedia.org/) pages.
 ## Examples
 
 ``` javascript
-var wanagrams = require( 'wikipedia-anagrams' );
+var getAnagrams = require( 'wikipedia-anagrams' );
 
 ```
 
