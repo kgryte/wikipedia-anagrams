@@ -5,15 +5,11 @@ TODO
 2. web server
 3. bootstrap ui
 4. create a middleware style pipeline for testing
-5. make language an additional `option` (3rd argument)
-	-	if url, will need to extract this
+5. 
 6. 
 7. parse URLs
-	-	allow either topic or url input
 	-	basic support is there but needs to be polished
-8. option => `merge`
-	-	treat multiple pages as a single corpus or as separate corpus
-	-	for separate case, ability to either merge the results into a single array or create a hash listing the anagrams for each page separately
+8. 
 9. modules
 	-	compute-anagram-hash
 	-	wikipedia-anagrams
