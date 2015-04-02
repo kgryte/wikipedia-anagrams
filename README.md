@@ -30,14 +30,6 @@ Finds [anagrams](http://en.wikipedia.org/wiki/Anagram) in [Wikipedia](http://www
 	-	__hashes__: `array` of [anagram hashes](https://github.com/compute-io/anagram-hash).
 
 ``` javascript
-function onAnagrams( error, hashes ) {
-	if ( error ) {
-		console.error( error );
-		return;
-	}
-	console.log( hashes );
-}
-
 // Single resource:
 getAnagrams( 'President of the United States', onAnagrams );
 
@@ -46,6 +38,14 @@ getAnagrams( [
 	'http://en.wikipedia.org/wiki/ballet',
 	'http://es.wikipedia.org/wiki/ballet'
 ], onAnagrams );
+
+function onAnagrams( error, hashes ) {
+	if ( error ) {
+		console.error( error );
+		return;
+	}
+	console.log( hashes );
+}
 ```
 
 The function accepts the following `options`:
