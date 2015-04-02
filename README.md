@@ -178,14 +178,10 @@ $ wikipedia-anagrams 'http://en.wikipedia.org/wiki/mathematics' 'http://en.wikip
 $ wikipedia-anagrams 'http://en.wikipedia.org/wiki/mathematics' ballet
 
 # Pipe Wikipedia page markup:
-$ curl -s 'http://en.wikipedia.org/w/index.php?action=raw&title=mathematics' | \
-wikipedia-anagrams | \
-awk '{print "\nAnagrams:\n\n"$1}'
+$ curl -s 'http://en.wikipedia.org/w/index.php?action=raw&title=mathematics' | wikipedia-anagrams | awk '{print "\nAnagrams:\n\n"$1}'
 
 # Pipe multiple Wikipedia pages:
-$ curl -s 'http://en.wikipedia.org/w/index.php?action=raw&title=mathematics' 'http://en.wikipedia.org/w/index.php?action=raw&title=ballet' | \
-wikipedia-anagrams | \
-awk '{print "\nAnagrams:\n\n"$1}'
+$ curl -s 'http://en.wikipedia.org/w/index.php?action=raw&title=mathematics' 'http://en.wikipedia.org/w/index.php?action=raw&title=ballet' | wikipedia-anagrams | awk '{print "\nAnagrams:\n\n"$1}'
 ```
 
 For local installations, modify the command to point to the local installation directory; e.g., 
