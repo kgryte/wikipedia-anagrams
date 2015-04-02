@@ -1,0 +1,18 @@
+
+Usage: wikipedia-anagrams [options] [url 1] [url 2] [url 3] ...
+
+Options:
+
+  -h,    --help                Print this message.
+  -V,    --version             Print the package version.
+  -enc,  --encoding <encoding> Set the string encoding of chunks. Default: null.
+  -hwm,  --highwatermark       Specify how much data can be buffered into memory
+                               before applying back pressure. Default: 16kb.
+  -nho,  --no-halfopen         Close the stream when the writable stream ends.
+                               Default: false.
+  -nds,  --no-decodestrings    Prevent strings from being converted into buffers
+                               before streaming to destination. Default: false.
+  -om,   --objectmode          Stream individual objects rather than buffers.
+                               Default: false.
+  -lang, --language <lang>     Set the default query language. Default: 'en'.
+

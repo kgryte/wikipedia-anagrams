@@ -37,7 +37,7 @@ function onAnagrams( error, hashes ) {
 		console.log( '\n' );
 	}
 	// Merge the hashes...
-	hash = hashes[ 0 ];
+	hash = hashes[ 0 ].copy();
 	hash.merge.apply( hash, hashes.slice( 1 ) );
 
 	// Print the merged hash...

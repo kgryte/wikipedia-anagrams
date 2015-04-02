@@ -18,6 +18,9 @@
     "coveralls": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --dir ./reports/coveralls/coverage --report lcovonly -- -R spec && cat ./reports/coveralls/coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./reports/coveralls"
   },
   "main": "./lib",
+  "bin": {
+    "wikipedia-anagrams": "./bin/cli.js"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/kgryte/wikipedia-anagrams.git"
@@ -33,7 +36,11 @@
   },
   "dependencies": {
     "compute-anagram-hash": "0.0.2",
+    "minimist": "^1.1.1",
+    "readable-stream": "^1.0.33",
+    "validate.io-boolean": "^1.0.4",
     "validate.io-function": "^1.0.2",
+    "validate.io-nonnegative": "^1.0.0",
     "validate.io-object": "^1.0.3",
     "validate.io-string": "^1.0.2",
     "validate.io-string-array": "^1.0.0",
@@ -43,6 +50,8 @@
   "devDependencies": {
     "chai": "2.x.x",
     "coveralls": "^2.11.1",
+    "flow-mock-read": "^1.0.0",
+    "flow-mock-write": "^1.0.1",
     "istanbul": "^0.3.0",
     "jshint": "2.x.x",
     "jshint-stylish": "^1.0.0",

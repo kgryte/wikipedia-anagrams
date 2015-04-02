@@ -1,11 +1,12 @@
 TODO
 ====
 
-1. CLI
+1. curl -s 'http://en.wikipedia.org/w/index.php?ation=raw&title=mathematics' 'http://en.wikipedia.org/w/index.php?action=raw&title=ballet' | node ./bin/cli.js
 2. web server
 3. bootstrap ui
 4. create a middleware style pipeline for testing
-5. 
+5. replace `wikipedia.from_api` method with own request method
+	-	`error` argument, etc. => see test coverage
 6. 
 7. parse URLs
 	-	notably validation! => do we need to confirm that the URLs are Wikipedia urls?
@@ -27,6 +28,10 @@ TODO
 
 ### Analytics
 
+0. 	summary statistics
+	-	mean number of anagrams per page
+	-	variance
+	-	etc.
 1.	between anagram comparison
 	-	frequency
 	-	how freq is one anagram (word) relative to another anagram (word) having the same characters
