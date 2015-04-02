@@ -177,7 +177,7 @@ $ wikipedia-anagrams 'http://en.wikipedia.org/wiki/mathematics'
 # Specify multiple page URLs:
 $ wikipedia-anagrams 'http://en.wikipedia.org/wiki/mathematics' 'http://en.wikipedia/org/wiki/ballet'
 
-# Specify a mix of page titles and page URLs:
+# Specify both page titles and page URLs:
 $ wikipedia-anagrams 'http://en.wikipedia.org/wiki/mathematics' ballet
 
 # Pipe Wikipedia page markup:
