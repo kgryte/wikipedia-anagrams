@@ -165,6 +165,9 @@ $ <stdout> | wikipedia-anagrams | <stdin>
 # Specify a single page title:
 $ wikipedia-anagrams mathematics
 
+# Specify the default language:
+$ wikipedia-anagrams --lang=es ballet
+
 # Specify multiple page titles:
 $ wikipedia-anagrams mathematics ballet
 
