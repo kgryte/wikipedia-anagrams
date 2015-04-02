@@ -19,7 +19,7 @@
   },
   "main": "./lib",
   "bin": {
-    "wikipedia-anagrams": "./bin/cli.js"
+    "wikipedia-anagrams": "./bin/cli"
   },
   "repository": {
     "type": "git",
