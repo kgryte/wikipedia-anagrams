@@ -8,7 +8,7 @@ TODO
 5. 
 6. 
 7. parse URLs
-	-	basic support is there but needs to be polished
+	-	notably validation! => do we need to confirm that the URLs are Wikipedia urls?
 8. 
 9. modules
 	-	compute-anagram-hash
@@ -19,9 +19,7 @@ TODO
 	-	currently, a non-existent page and a page without anagrams return the same result
 		-	should this be the case, or some other feedback?
 	- 	could make the module an event emitter and emit warnings, errors, etc.
-11. two analyses
-	-	sep pages, sep anagram output
-	-	sep pages, but treat a single corpus
+11. 
 12. change fcn name to `analyze`???
 13. 
 

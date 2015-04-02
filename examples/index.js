@@ -8,6 +8,7 @@ var resources = [
 	'http://en.wikipedia.org/wiki/ballet',
 	'http://es.wikipedia.org/wiki/ballet',
 	'Spain',
+	'President of the United States',
 	'Mathematics'
 ];
 
@@ -36,7 +37,7 @@ function onAnagrams( error, hashes ) {
 		console.log( hashes[ i ].get() );
 		console.log( '\n' );
 	}
-	// Merge the two hashes...
+	// Merge the hashes...
 	hash = hashes[ 0 ];
 	hash.merge.apply( hash, hashes.slice( 1 ) );
 

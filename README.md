@@ -2,7 +2,7 @@ Wikipedia Anagrams
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
-> Finds anagrams in [Wikipedia](http://www.wikipedia.org/) pages.
+> Finds [anagrams](http://en.wikipedia.org/wiki/Anagram) in [Wikipedia](http://www.wikipedia.org/) pages.
 
 
 ## Installation
@@ -20,12 +20,46 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 var getAnagrams = require( 'wikipedia-anagrams' );
 ```
 
-#### getAnagrams( x )
+#### getAnagrams( resources, [opts,] clbk )
 
-Finds anagrams in [Wikipedia](http://www.wikipedia.org/) pages.
+Finds [anagrams](http://en.wikipedia.org/wiki/Anagram) in [Wikipedia](http://www.wikipedia.org/) pages. The function requires two arguments:
+
+*	__resources__: can be either a `string` specifying a page title/URL or a `string array` specifying multiple page title/URLs.
+* 	__clbk__: callback `function` to invoke after analyzing Wikipedia pages. The `function` should accept two arguments:
+	-	__error__: `error` object.
+	-	__hashes__: `array` of [anagram hashes](https://github.com/compute-io/anagram-hash).
 
 ``` javascript
+function onAnagrams( error, hashes ) {
+	if ( error ) {
+		console.error( error );
+		return;
+	}
+	console.log( hashes );
+}
 
+// Single resource:
+getAnagrams( 'President of the United States', onAnagrams );
+
+// Multiple resources:
+getAnagrams( ['http://en.wikipedia.org/wiki/ballet', 'http://es.wikipedia.org/wiki/ballet'], onAnagrams );
+```
+
+The function accepts the following `options`:
+
+*	__lang__: the default page language. Default: 'en'.
+
+To specify an alternative default language, set the `lang` option.
+
+``` javascript
+getAnagrams( 'ballet', {'lang':'es'}, onAnagrams );
+```
+
+__Note__: if provided a URL, the language indicated by the URL supersedes the default `lang` option.
+
+``` javascript
+getAnagrams( 'http://en.wikipedia.org/wiki/ballet', {'lang':'es'}, onAnagrams );
+// => fetches the 'en' ballet resource, not the 'es' resource
 ```
 
 
@@ -35,6 +69,43 @@ Finds anagrams in [Wikipedia](http://www.wikipedia.org/) pages.
 ``` javascript
 var getAnagrams = require( 'wikipedia-anagrams' );
 
+// Specify Wikipedia resources either by page title or by URL...
+var resources = [
+	'Linear regression',
+	'http://en.wikipedia.org/wiki/ballet',
+	'http://es.wikipedia.org/wiki/ballet',
+	'Spain',
+	'President of the United States',
+	'Mathematics'
+];
+
+// Run the analysis...
+getAnagrams( resources, onAnagrams );
+
+// Callback invoked after running the anagram analysis...
+function onAnagrams( error, hashes ) {
+	var hash,
+		len,
+		i;
+
+	if ( error ) {
+		throw new Error( error );
+	}
+	// Print the individual results...
+	len = hashes.length;
+	for ( i = 0; i < len; i++ ) {
+		console.log( resources[ i ] + '...' );
+		console.log( hashes[ i ].get() );
+		console.log( '\n' );
+	}
+	// Merge the hashes...
+	hash = hashes[ 0 ];
+	hash.merge.apply( hash, hashes.slice( 1 ) );
+
+	// Print the merged hash...
+	console.log( 'Merged...' );
+	console.log( hash.get() );
+}
 ```
 
 To run the example code from the top-level application directory,
