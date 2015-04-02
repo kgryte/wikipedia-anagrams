@@ -19,14 +19,13 @@ getAnagrams( resources, onAnagrams );
 * FUNCTION: onAnagrams( error, hashes )
 *	Callback invoked after finding anagrams within the specified Wikipedia resources.
 *
-* @param {Object} error - error object
+* @param {Object|null} error - error object
 * @param {Object[]} hashes - array of anagram hashes
 */
 function onAnagrams( error, hashes ) {
 	var hash,
 		len,
 		i;
-
 	if ( error ) {
 		throw new Error( error );
 	}

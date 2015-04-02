@@ -24,9 +24,9 @@ var getAnagrams = require( 'wikipedia-anagrams' );
 
 Finds [anagrams](http://en.wikipedia.org/wiki/Anagram) in [Wikipedia](http://www.wikipedia.org/) pages. The function requires two arguments:
 
-*	__resources__: can be either a `string` specifying a page title/URL or a `string array` specifying multiple page title/URLs.
+*	__resources__: may be either a `string` specifying a page title/URL or a `string array` specifying multiple page title/URLs.
 * 	__clbk__: callback `function` to invoke after analyzing Wikipedia pages. The `function` should accept two arguments:
-	-	__error__: `error` object.
+	-	__error__: `error` object. If no errors occur during analysis, this value is `null`.
 	-	__hashes__: `array` of [anagram hashes](https://github.com/compute-io/anagram-hash).
 
 ``` javascript
@@ -42,17 +42,21 @@ function onAnagrams( error, hashes ) {
 getAnagrams( 'President of the United States', onAnagrams );
 
 // Multiple resources:
-getAnagrams( ['http://en.wikipedia.org/wiki/ballet', 'http://es.wikipedia.org/wiki/ballet'], onAnagrams );
+getAnagrams( [
+	'http://en.wikipedia.org/wiki/ballet',
+	'http://es.wikipedia.org/wiki/ballet'
+], onAnagrams );
 ```
 
 The function accepts the following `options`:
 
-*	__lang__: the default page language. Default: 'en'.
+*	__lang__: the default page language. Default: `'en'`.
 
 To specify an alternative default language, set the `lang` option.
 
 ``` javascript
 getAnagrams( 'ballet', {'lang':'es'}, onAnagrams );
+// => fetches the Spanish Wikipedia resource for ballet
 ```
 
 __Note__: if provided a URL, the language indicated by the URL supersedes the default `lang` option.
@@ -87,7 +91,6 @@ function onAnagrams( error, hashes ) {
 	var hash,
 		len,
 		i;
-
 	if ( error ) {
 		throw new Error( error );
 	}
