@@ -1,7 +1,7 @@
 TODO
 ====
 
-1. curl -s 'http://en.wikipedia.org/w/index.php?ation=raw&title=mathematics' 'http://en.wikipedia.org/w/index.php?action=raw&title=ballet' | node ./bin/cli.js
+1. 
 2. web server
 3. bootstrap ui
 4. create a middleware style pipeline for testing

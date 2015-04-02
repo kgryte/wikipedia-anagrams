@@ -89,7 +89,7 @@ if ( args.version ) {
 
 var rsrc = args._;
 
-// Source mode or transform?
+// Source mode or transform mode?
 opts = {};
 if ( rsrc.length ) {
 	if ( args.hasOwnProperty( 'language' ) ) {

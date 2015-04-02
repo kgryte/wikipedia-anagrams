@@ -118,6 +118,86 @@ $ node ./examples/index.js
 ```
 
 
+---
+## CLI
+
+
+### Installation
+
+To use the module as a general utility, install the module globally
+
+``` bash
+$ npm install -g wikipedia-anagrams
+```
+
+
+### Usage
+
+``` bash
+Usage: wikipedia-anagrams [options] [url 1] [url 2] [url 3] ...
+
+Options:
+
+  -h,    --help                Print this message.
+  -V,    --version             Print the package version.
+  -enc,  --encoding <encoding> Set the string encoding of chunks. Default: null.
+  -hwm,  --highwatermark       Specify how much data can be buffered into memory
+                               before applying back pressure. Default: 16kb.
+  -nho,  --no-halfopen         Close the stream when the writable stream ends.
+                               Default: false.
+  -nds,  --no-decodestrings    Prevent strings from being converted into buffers
+                               before streaming to destination. Default: false.
+  -om,   --objectmode          Stream individual objects rather than buffers.
+                               Default: false.
+  -lang, --language <lang>     Set the default query language. Default: 'en'.
+```
+
+The `wikipedia-anagrams` command is available as a [standard stream](http://en.wikipedia.org/wiki/Pipeline_%28Unix%29).
+
+``` bash
+$ <stdout> | wikipedia-anagrams | <stdin>
+``` 
+
+
+### Examples
+
+``` bash
+# Specify a single page title:
+$ wikipedia-anagrams mathematics
+
+# Specify multiple page titles:
+$ wikipedia-anagrams mathematics ballet
+
+# Specify a single page URL:
+$ wikipedia-anagrams 'http://en.wikipedia.org/wiki/mathematics'
+
+# Specify multiple page URLs:
+$ wikipedia-anagrams 'http://en.wikipedia.org/wiki/mathematics' 'http://en.wikipedia/org/wiki/ballet'
+
+# Specify a mix of page titles and page URLs:
+$ wikipedia-anagrams 'http://en.wikipedia/org/wiki/mathematics' ballet
+
+# Pipe Wikipedia page markup:
+$ curl -s 'http://en.wikipedia.org/w/index.php?action=raw&title=mathematics' | \
+wikipedia-anagrams | \
+awk '{print "\nAnagrams:\n\n"$1}'
+
+# Pipe multiple Wikipedia pages:
+$ curl -s 'http://en.wikipedia.org/w/index.php?action=raw&title=mathematics' 'http://en.wikipedia.org/w/index.php?action=raw&title=ballet' | \
+wikipedia-anagrams | \
+awk '{print "\nAnagrams:\n\n"$1}'
+```
+
+For local installations, modify the above command to point to the local installation directory; e.g., 
+
+``` bash
+$ curl -s 'http://en.wikipedia.org/w/index.php?action=raw&title=mathematics' | \
+./node_modules/.bin/wikipedia-anagrams | \
+awk '{print "\nAnagrams:\n\n"$1}'
+```
+
+
+---
 ## Tests
 
 ### Unit
