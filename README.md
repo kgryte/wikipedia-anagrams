@@ -175,7 +175,7 @@ $ wikipedia-anagrams 'http://en.wikipedia.org/wiki/mathematics'
 $ wikipedia-anagrams 'http://en.wikipedia.org/wiki/mathematics' 'http://en.wikipedia/org/wiki/ballet'
 
 # Specify a mix of page titles and page URLs:
-$ wikipedia-anagrams 'http://en.wikipedia/org/wiki/mathematics' ballet
+$ wikipedia-anagrams 'http://en.wikipedia.org/wiki/mathematics' ballet
 
 # Pipe Wikipedia page markup:
 $ curl -s 'http://en.wikipedia.org/w/index.php?action=raw&title=mathematics' | \
@@ -188,12 +188,16 @@ wikipedia-anagrams | \
 awk '{print "\nAnagrams:\n\n"$1}'
 ```
 
-For local installations, modify the above command to point to the local installation directory; e.g., 
+For local installations, modify the command to point to the local installation directory; e.g., 
 
 ``` bash
-$ curl -s 'http://en.wikipedia.org/w/index.php?action=raw&title=mathematics' | \
-./node_modules/.bin/wikipedia-anagrams | \
-awk '{print "\nAnagrams:\n\n"$1}'
+$ ./node_modules/.bin/wikipedia-anagrams  mathematics
+```
+
+Or, if you have cloned this repository and run `npm install`, modify the command to point to the executable; e.g., 
+
+``` bash
+$ node ./bin/cli mathematics
 ```
 
 
